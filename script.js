@@ -57,8 +57,8 @@ export function sort() {
 // 4. How many years did all the inventors live?
 // Return the total number of years all the inventors lived
 export function reduce() {
-	return inventors.reduce((a)=>{
-		return a.passed-a.year;
+	return inventors.reduce((a,b)=>{
+		return a.passed-b.year;
 	});
 }
 
