@@ -39,7 +39,7 @@ export function myfilter() {
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
 	return inventors.map((inventor)=>{
-		return concat(inventor.first, inventor.last);
+		return inventor.first+' '+inventor.last);
 	});
 }
 
@@ -59,14 +59,14 @@ export function sort() {
 export function reduce() {
 	return inventors.reduce((total,inventor)=>{
 		return total+(inventor.passed-inventor.year);
-	});
+	},0);
 }
 
 // 5. Sort the inventors by years lived and return the sorted array
 export function sortbylived() {
-	inventors.sort(function (a, b) { 
-	const lastInventor = a.passed - a.year;
-	const nextInventor = b.passed - b.year; 
+	return inventors.sort(function (a, b) { 
+		const lastInventor = a.passed - a.year;
+		const nextInventor = b.passed - b.year; 
 	return lastInventor > nextInventor ? -1 : 1; });
 }
 
@@ -88,4 +88,5 @@ export function reducedSum() {
 		if (!obj[item]) { obj[item] = 0; }
 		obj[item]++; 
 		return obj; }, {});
+	return transportation;
 }
