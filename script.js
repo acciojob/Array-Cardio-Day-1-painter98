@@ -29,8 +29,8 @@ const people = [
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's and return the filtered array
 export function myfilter() {
-		return inventors.filter(()=>{
-			return year>=1500 && year<1600;
+		return inventors.filter((inventor)=>{
+			return inventor.year>=1500 && inventor.year<1600;
 		});
 }
 
@@ -38,8 +38,8 @@ export function myfilter() {
 // 2. Give us an array of the inventor first and last names (i.e. full name)
 // Ex: For the first inventor the full name will be 'Albert Einstein'
 export function map() {
-	return inventors.map(()=>{
-		return first + last;
+	return inventors.map((inventor)=>{
+		return inventor.first + inventor.last;
 	});
 }
 
@@ -86,7 +86,7 @@ const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bik
 
 export function reducedSum() {
     // Return an object containing transports as key and its number of occurances as the key's value
-	
+	let ans = {};
 	for(let i=0;i<data.length;i++){
 		let count=0;
 		for(let j=0;j<data.length;j++){
